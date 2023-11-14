@@ -1,7 +1,7 @@
-# Have to make a floating tkinter application/window that will be on screen at all times until closed.
 import tkinter as tk
 import ttkbootstrap as ttk
 import webbrowser
+import subprocess
 
 
 url = 'https://www.google.com/search?q='
@@ -16,7 +16,22 @@ valid_websites = [
 ]
 
 # The %s placeholder in chrome_path will be replaced by the URL when calling .open(final_url). The most basic usage is to insert values into a string with the %s placeholder.
-chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+# chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+
+
+def find_chrome_exe():
+    try:
+        result = subprocess.run(["where", "chrome.exe"],
+                                capture_output=True, text=True, check=True)
+        chrome_path = result.stdout.strip()
+        return chrome_path
+    except subprocess.CalledProcessError as e:
+        print(f"Error: {e}")
+        return None
+
+
+chrome_exe_path = find_chrome_exe()
+print(chrome_exe_path)
 
 
 def create_filter():
@@ -40,7 +55,7 @@ def search_google():
         print('Error! Please enter a valid search query.')
     else:
         final_url = create_url(user_input)
-        webbrowser.get(chrome_path).open(final_url)
+        webbrowser.get(chrome_exe_path).open(final_url)
 
 
 # GUI Code
@@ -56,6 +71,7 @@ root.resizable(False, False)
 root_icon = tk.PhotoImage(file='doc/images/icon.png')
 root.iconphoto(False, root_icon)
 
+
 # widgets
 search_entry_var = tk.StringVar()
 search_entry = ttk.Entry(
@@ -64,6 +80,7 @@ search_entry.pack(side='left', padx=15, expand=1)
 
 search_button = ttk.Button(root, text='Search', command=search_google)
 search_button.pack(side='left', padx=15, expand=1)
+
 
 # run
 root.attributes('-topmost', True)
