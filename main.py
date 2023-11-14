@@ -1,14 +1,10 @@
-# Have to make a floating tkinter application/window that will be on screen at all times until closed and will give google search return for the query typed in it.
-# It will work in conjunction with the rest of the code.
+# Have to make a floating tkinter application/window that will be on screen at all times until closed.
 import tkinter as tk
-from tkinter import ttk
+import ttkbootstrap as ttk
 import webbrowser
-import sys
 
 
 url = 'https://www.google.com/search?q='
-
-search = input('Search Google: ')
 
 valid_websites = [
     'reddit.com',
@@ -22,10 +18,6 @@ valid_websites = [
 # The %s placeholder in chrome_path will be replaced by the URL when calling .open(final_url). The most basic usage is to insert values into a string with the %s placeholder.
 chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
 
-# https://www.google.com/search?q=what+does+a+google+query+look+like - This is what a google query looks like for a normal google search
-# To get result from specific sites, we write the google search as shown below:
-# python tutorial (site:geeksforgeeks.org OR site:medium.com) - This is what the create_filter() function does.
-
 
 def create_filter():
     filter = '('
@@ -38,18 +30,41 @@ def create_filter():
     return filter
 
 
-def create_query():
-    query = sys.argv[1:]
-    # `' '.join()` pronounced space dot join is a nifty python function that joins all the strings of the sys.argv together.
-    return ' '.join(query)
+def create_url(query):
+    return url + query + create_filter()
 
 
-def create_url():
-    if len(sys.argv[1:]) == 0:
+def search_google():
+    user_input = search_entry_var.get()
+    if not user_input:
         print('Error! Please enter a valid search query.')
     else:
-        final_url = url + create_query() + create_filter()
+        final_url = create_url(user_input)
         webbrowser.get(chrome_path).open(final_url)
 
 
-create_url()
+# GUI Code
+# root
+root = ttk.Window(themename='cosmo')
+root.title('Search Google')
+
+root_pos_width = root.winfo_screenwidth() - 445
+root_pos_height = root.winfo_screenheight() - 1030
+root.geometry(f"425x75+{root_pos_width}+{root_pos_height}")
+
+root.resizable(False, False)
+root_icon = tk.PhotoImage(file='doc/images/icon.png')
+root.iconphoto(False, root_icon)
+
+# widgets
+search_entry_var = tk.StringVar()
+search_entry = ttk.Entry(
+    root, width=30, textvariable=search_entry_var)
+search_entry.pack(side='left', padx=15, expand=1)
+
+search_button = ttk.Button(root, text='Search', command=search_google)
+search_button.pack(side='left', padx=15, expand=1)
+
+# run
+root.attributes('-topmost', True)
+root.mainloop()
