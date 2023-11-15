@@ -1,6 +1,6 @@
 # Google Search Automation
 
-![Google Search Automation Logo](doc/images/icon.png)
+![Google Search Automation Logo](assets/icon.png)
 
 A simple Python application using Tkinter to automate Google searches with predefined filters.
 
@@ -66,4 +66,4 @@ Contributions are welcome! If you have suggestions or improvements, feel free to
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE)  file for details.

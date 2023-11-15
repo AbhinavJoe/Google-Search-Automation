@@ -16,9 +16,6 @@ valid_websites = [
     'quora.com'
 ]
 
-# The %s placeholder in chrome_path will be replaced by the URL when calling .open(final_url). The most basic usage is to insert values into a string with the %s placeholder.
-# chrome_path = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
-
 
 def find_chrome_exe():
     try:
@@ -69,7 +66,7 @@ root_pos_height = root.winfo_screenheight() - 1030
 root.geometry(f"425x75+{root_pos_width}+{root_pos_height}")
 
 root.resizable(False, False)
-root_icon = tk.PhotoImage(file='doc/images/icon.png')
+root_icon = tk.PhotoImage(file='assets/icon.png')
 root.iconphoto(False, root_icon)
 
 
