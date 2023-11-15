@@ -1,6 +1,6 @@
 # Google Search Automation
 
-![Google Search Automation Logo](https://github.com/AbhinavJoe/Google-Search-Automation/assets/91539403/8666a75a-d7ed-441f-b648-abdd30f1c41b)
+![Google Search Automation Logo](https://github.com/AbhinavJoe/Google-Search-Automation/assets/91539403/53a0c288-c146-423e-af8d-2cee6e9881d0)
 
 A simple Python application using Tkinter to automate Google searches with predefined filters.
 
