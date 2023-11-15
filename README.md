@@ -4,7 +4,7 @@
 
 A simple Python application using Tkinter to automate Google searches with predefined filters.
 
-**Disclaimer: This project is an independent and unofficial tool not affiliated with or endorsed by Google. The use of the Google name and logo is solely for descriptive purposes and to represent the functionality of the application.**
+**Disclaimer: This project is an independent and unofficial tool not affiliated with or endorsed by Google. The use of the Google name is solely for descriptive purposes and to represent the functionality of the application.**
 
 ## Table of Contents
 
