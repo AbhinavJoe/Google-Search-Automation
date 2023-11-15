@@ -7,6 +7,7 @@ import subprocess
 
 url = 'https://www.google.com/search?q='
 
+# valid websites can be changed to get curated search results from desired websites
 valid_websites = [
     'reddit.com',
     'stackoverflow.com',
@@ -50,9 +51,8 @@ def create_url(query):
 def search_google():
     user_input = search_entry_var.get()
     if not user_input:
-        # alert messagebox in case of no input
-        messagebox.showwarning(title="Error",
-                               message="Please enter a valid search query.")
+        messagebox.showwarning(title='Error',
+                               message='Please enter a valid search query.')
     else:
         final_url = create_url(user_input)
         webbrowser.get(chrome_exe_path).open(final_url)

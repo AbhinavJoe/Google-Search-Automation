@@ -1,6 +1,6 @@
 # Google Search Automation
 
-![Google Search Automation Logo](assets/logo.png)
+![Google Search Automation Logo](assets/logo.ico)
 
 A simple Python application using Tkinter to automate Google searches with predefined filters.
 
@@ -18,13 +18,13 @@ A simple Python application using Tkinter to automate Google searches with prede
 
 ## Introduction
 
-This application provides a user-friendly interface for performing Google searches with predefined filters. It uses Tkinter for the GUI, allowing users to input their search query and trigger a search with specified filters.
+This application provides a user-friendly interface for performing Google searches with predefined filters. It uses Tkinter for the GUI, allowing users to input their search query and trigger a search with specified filters without having a web browser open.
 
 ## Features
 
 - **Custom Filters:** Predefined filters for popular websites (e.g., Reddit, Stack Overflow, Medium, GeeksforGeeks, Stack Exchange, Quora). Helpful for programmers that need the searches from popular discussion and question-and-answer platforms. The custom filters can be changed and/or removed based on user needs.
 - **Automatic Chrome Detection:** The application automatically detects the Chrome browser's executable path on the user's system.
-- **Responsive GUI:** A simple and responsive graphical user interface for easy interaction.
+- **Responsive GUI:** A simple and responsive graphical user interface for easy interaction. The GUI stays floating on the top right corner of the screen on top of other windows for ease of accessibility.
 
 ## Requirements
 
