@@ -50,7 +50,9 @@ def create_url(query):
 def search_google():
     user_input = search_entry_var.get()
     if not user_input:
-        print('Error! Please enter a valid search query.')
+        # alert messagebox in case of no input
+        messagebox.showwarning(title="Error",
+                               message="Please enter a valid search query.")
     else:
         final_url = create_url(user_input)
         webbrowser.get(chrome_exe_path).open(final_url)
@@ -67,6 +69,7 @@ root.geometry(f"425x75+{root_pos_width}+{root_pos_height}")
 
 root.resizable(False, False)
 root_icon = tk.PhotoImage(file='assets/icon.png')
+root.iconphoto(True, root_icon)
 root.iconphoto(False, root_icon)
 
 
