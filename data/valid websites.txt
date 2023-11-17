@@ -1,0 +1,6 @@
+'reddit.com',
+'stackoverflow.com',
+'medium.com',
+'geeksforgeeks.org',
+'stackexchange.com',
+'quora.com'

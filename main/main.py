@@ -3,8 +3,11 @@ from tkinter import messagebox
 import ttkbootstrap as ttk
 import webbrowser
 import subprocess
+import os
 
 
+file_location = os.path.dirname(os.path.abspath(__file__))
+icon_path = os.path.join(file_location, '..', 'assets', 'icon.png')
 url = 'https://www.google.com/search?q='
 
 # valid websites can be changed to get curated search results from desired websites
@@ -68,7 +71,7 @@ root_pos_height = root.winfo_screenheight() - 1030
 root.geometry(f"425x75+{root_pos_width}+{root_pos_height}")
 
 root.resizable(False, False)
-root_icon = tk.PhotoImage(file='assets/icon.png')
+root_icon = tk.PhotoImage(file=icon_path)
 root.iconphoto(True, root_icon)
 root.iconphoto(False, root_icon)
 
