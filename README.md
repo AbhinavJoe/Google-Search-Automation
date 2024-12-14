@@ -16,6 +16,8 @@ A simple Python application using Tkinter to automate Google searches with prede
 
 ## Introduction
 
+![Demo](https://github.com/user-attachments/assets/7e54eda5-d047-4427-9c8a-ad497aa3a216)
+
 This application provides a user-friendly interface for performing Google searches with predefined filters. It uses Tkinter for the GUI, allowing users to input their search query and trigger a search with specified filters without having a web browser open.
 
 ## Features
