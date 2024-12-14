@@ -59,6 +59,7 @@ def search_google():
     else:
         final_url = create_url(user_input)
         webbrowser.get(chrome_exe_path).open(final_url)
+        search_entry_var.set("")
 
 
 # GUI Code
